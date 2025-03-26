@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INPAY Wallet Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header Section -->
+        <header class="dashboard-header">
+            <div class="logo">INPAY</div>
+            <div class="user-info">
+                <span class="welcome">Welcome, John Doe</span>
+                <img src="usr.png" alt="User Profile" class="profile-pic">
+                <div class="icons">
+                    <span class="icon settings"><i class="fas fa-cog"></i></span>
+                    <span class="icon notification"><i class="fas fa-bell"></i></span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Balance Section -->
+        <section class="balance-section">
+            <div class="balance-card">
+                <h2>Current Balance:</h2>
+                <h3>$12,500</h3>
+            </div>
+            <div class="balance-card">
+                <h2>Referral Balance:</h2>
+                <h3>$1,250.00</h3>
+            </div>
+        </section>
+
+        <!-- Action Buttons Section -->
+        <section class="actions-section">
+            <div class="action-card deposit"><i class="fas fa-arrow-down"></i> Deposit</div>
+            <div class="action-card withdraw"><a href="withdraw.html"><i class="fas fa-arrow-up"></i> Withdraw</a></div>
+        <!-- </section> <div class="action-card invest"><i class="fas fa-chart-line"></i> Invest</div> -->
+
+        <!-- Feature Cards Section -->
+        <section class="features-section">
+            <div class="feature-btn">
+                <div class="feature-card community">
+                    <i class="fas fa-users"></i>
+                </div>
+                <span>Community</span> 
+            </div>
+            
+            <div class="feature-btn">
+                <div class="feature-card analysis"><i class="fas fa-chart-pie"></i></div>
+                <span>Buy UTC Code</span>
+            </div>
+
+            <div class="feature-btn">
+                <div class="feature-card contact-admin"><i class="fas fa-headset"></i></div>
+                 <span>Contact Admin</span>
+            </div>
+            <div class="feature-btn">
+                <div class="feature-card referral"><i class="fas fa-user-friends"></i></div>
+                <span>Refer and Earn</span>
+            </div>
+            <div class="feature-btn">
+                <div class="feature-card referral"><i class="fas fa-user-friends"></i></div>
+                <span>Terms & Condition</span>
+            </div>
+            <div class="feature-btn">
+                <div class="feature-card referral"><i class="fas fa-user-friends"></i></div>
+                <span>Privacy & policies</span>
+            </div>
+                </section>
+
+
+        <!--Recent Transaction -->
+         <div class="recent-transaction">
+            <h2>Recent Transaction</h2>
+              <table>
+                <thead>
+                    <tr>
+                        <th>History</th>
+                    </tr>
+             </thead>
+             <tbody>
+                <tr>
+                    <td><li>Withdrawn $100 from your refferal balance</td>
+                </tr>
+             </tbody>
+             </table>
+         </div>
+
+        <!-- Recent Activities Section -->
+        <section class="recent-activities">
+            <h3>Recent Activities</h3>
+            <div class="activity-container">
+                <ul class="activity-list">
+                    <li>Aliyu ali*******@gmail.com has just withdrawn $10</li>
+                    <li>James jame1*******@gmail.com has just withdrawn $20 from Referall bal...</li>
+                    <li>Michelle me*******@gmail.com has just withdrawn $100 from....</li>
+                    <li>Michelle me*******@gmail.com has just withdrawn $100 from....</li>
+                    <li>Michelle me*******@gmail.com has just withdrawn $100 from....</li>
+                    <li>Michelle me*******@gmail.com has just withdrawn $100 from....</li>
+                    <li>Michelle me*******@gmail.com has just withdrawn $100 from....</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Recent Activity Scrolling Effect
+        document.addEventListener("DOMContentLoaded", function () {
+            const activityList = document.querySelector(".activity-list");
+            setInterval(() => {
+                const firstItem = activityList.firstElementChild;
+                activityList.appendChild(firstItem.cloneNode(true));
+                firstItem.remove();
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

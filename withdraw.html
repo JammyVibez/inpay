@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>INPAY Wallet Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+
+  <body>
+    <div class="dashboard-container">
+      <!-- Header Section -->
+      <header class="dashboard-header">
+        <div class="logo">INPAY</div>
+        <div class="user-info">
+          <img src="usr.png" alt="User Profile" class="profile-pic" />
+          <div class="icons">
+            <span class="icon settings"><i class="fas fa-cog"></i></span>
+            <span class="icon notification"><i class="fas fa-bell"></i></span>
+          </div>
+        </div>
+      </header>
+
+      
+        <h2>Withdraw Funds</h2>
+        <form id="withdrawForm">
+            <div class="form-group">
+                <label for="Accountnumber">Account Number:</label>
+                <input type="text" name="Accountnumber" required />
+            </div>
+            <div class="form-group">
+                <label for="Accountname">Account Name:</label>
+                <input type="text" name="Accountname" required />
+            </div>
+            <div class="form-group">
+                <label for="Bankname">Bank Name:</label>
+                <select name="bankname" required>
+                    <option value="Opay">Opay</option>
+                    <option value="Palm Pay">Palm Pay</option>
+                    <option value="First Bank">First Bank</option>
+                    <option value="Access Bank">Access Bank</option>
+                    <option value="FCMB">FCMB</option>
+                    <option value="Sterling Bank">Sterling Bank</option>
+                    <option value="Fidelity Bank">Fidelity Bank</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Amount">Amount:</label>
+                <input type="text" name="Amount" required />
+            </div>
+            <div class="form-group">
+                <label for="Utcode">UTC Code Package:</label>
+                <input type="text" name="Utcode" required />
+            </div>
+            <button type="submit">Withdraw</button>
+        </form>
+    </div>
+    
+    <!-- Transaction Receipt Modal -->
+    <div class="modal" id="receiptModal">
+        <div class="modal-content">
+            <div class="checkmark">✔️</div>
+            <h3>Transaction Successful</h3>
+            <p>Your withdrawal has been processed successfully.</p>
+            <p>Please wait 15-20 minutes to receive your funds.</p>
+            <button onclick="closeModal()">OK</button>
+        </div>
+    </div>
+    
+    
+   <script>
+        document.getElementById("withdrawForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            document.getElementById("receiptModal").style.display = "flex";
+        });
+
+        function closeModal() {
+            document.getElementById("receiptModal").style.display = "none";
+        }
+    </script>
+  </body>
+</html>
